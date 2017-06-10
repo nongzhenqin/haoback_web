@@ -1,14 +1,13 @@
 // 路由映射配置
-const Index = r => require.ensure([], () => r(require('@/components/Index.vue')), 'index');
+const Index = r => require.ensure([], () => r(require('../components/Index.vue')), 'Index'),
+	  NotFoundComponent = r => require.ensure([], () => r(require('../components/NotFoundComponent.vue')), 'NotFoundComponent');
 module.exports = [
 	// 入口
 	{
-		path: '/',
-		redirect: '/index'
+		path: '/haoback',
+		component: Index,
+		meta: { scrollToTop: true }
 	},
-	//首页
-	{
-		path: '/index',
-		component: Index
-	}
+	// 404页面
+	{ path: '*', component: NotFoundComponent }
 ];

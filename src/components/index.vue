@@ -2,10 +2,10 @@
   <div>
     <Row type="flex" justify="start" align="middle" class="code-row-bg">
           <Col span="2"></Col>
-          <Col span="1"><a href="#1" class="a-type">男装</a></Col>
-          <Col span="1"><a href="#2" class="a-type">女装</a></Col>
-          <Col span="1"><a href="#3" class="a-type">化妆品</a></Col>
-          <Col span="1"><a href="#4" class="a-type">3C</a></Col>
+          <Col span="1"><a href="#m" class="a-type">男装</a></Col>
+          <Col span="1"><a href="#w" class="a-type">女装</a></Col>
+          <Col span="1"><a href="#h" class="a-type">化妆品</a></Col>
+          <Col span="1"><a href="#C" class="a-type">3C</a></Col>
       </Row>
       <br>
 
@@ -67,7 +67,7 @@
         <Col span="2"></Col>
       <Col span="4">
         <div>
-          <h2 class="h2-title" id="1">男装</h2>
+          <h2 class="h2-title" id="m">男装</h2>
         </div>
       </Col>
       </Row>
@@ -121,7 +121,7 @@
         <Col span="2"></Col>
       <Col span="4">
         <div>
-          <h2 class="h2-title" id="2">女装</h2>
+          <h2 class="h2-title" id="w">女装</h2>
         </div>
       </Col>
       </Row>
@@ -175,7 +175,7 @@
         <Col span="2"></Col>
       <Col span="4">
         <div>
-          <h2 class="h2-title" id="3">化妆品</h2>
+          <h2 class="h2-title" id="h">化妆品</h2>
         </div>
       </Col>
       </Row>
@@ -229,61 +229,93 @@
         <Col span="2"></Col>
       <Col span="4">
         <div>
-          <h2 class="h2-title" id="4">3C</h2>
+          <h2 class="h2-title" id="C">3C</h2>
         </div>
       </Col>
       </Row>
       <Row type="flex" justify="start" style="padding-top:20px;">
         <Col span="2"></Col>
-      <Col span="4" class="col-style">
-        <a href="" class="a-product">
-          <img class="product-img" src="//img.alicdn.com/bao/uploaded/i2/274432595/TB2Wy_Dp80lpuFjSszdXXcdxFXa_!!274432595.jpg_400x400_.webp">
-          <h2>商品名称</h2>
-          <h6>一句话简介</h6>
-          <span style="color: red;width:100%;height100%;">价格</span>
-        </a>
-      </Col>
-      <Col span="4" class="col-style">
-        <a href="" class="a-product">
-          <img class="product-img" src="//img.alicdn.com/bao/uploaded/i2/274432595/TB2Wy_Dp80lpuFjSszdXXcdxFXa_!!274432595.jpg_400x400_.webp">
-          <h2>商品名称</h2>
-          <h6>一句话简介</h6>
-          <span style="color: red;width:100%;height100%;">价格</span>
-        </a>
-      </Col>
-      <Col span="4" class="col-style">
-        <a href="" class="a-product">
-          <img class="product-img" src="//img.alicdn.com/bao/uploaded/i2/274432595/TB2Wy_Dp80lpuFjSszdXXcdxFXa_!!274432595.jpg_400x400_.webp">
-          <h2>商品名称</h2>
-          <h6>一句话简介</h6>
-          <span style="color: red;width:100%;height100%;">价格</span>
-        </a>
-      </Col>
-      <Col span="4" class="col-style">
-        <a href="" class="a-product">
-          <img class="product-img" src="//img.alicdn.com/bao/uploaded/i2/274432595/TB2Wy_Dp80lpuFjSszdXXcdxFXa_!!274432595.jpg_400x400_.webp">
-          <h2>商品名称</h2>
-          <h6>一句话简介</h6>
-          <span style="color: red;width:100%;height100%;">价格</span>
-        </a>
-      </Col>
-      <Col span="4" class="col-style">
-        <a href="" class="a-product">
-          <img class="product-img" src="//img.alicdn.com/bao/uploaded/i2/274432595/TB2Wy_Dp80lpuFjSszdXXcdxFXa_!!274432595.jpg_400x400_.webp">
-          <h2>商品名称</h2>
-          <h6>一句话简介</h6>
-          <span style="color: red;width:100%;height100%;">价格</span>
-        </a>
-      </Col>
+        <Col span="4" class="col-style">
+          <a href="" class="a-product">
+            <img class="product-img" src="//img.alicdn.com/bao/uploaded/i2/274432595/TB2Wy_Dp80lpuFjSszdXXcdxFXa_!!274432595.jpg_400x400_.webp">
+            <h2>商品名称</h2>
+            <h6>一句话简介</h6>
+            <span style="color: red;width:100%;height100%;">价格</span>
+          </a>
+        </Col>
+        <Col span="4" class="col-style">
+          <a href="" class="a-product">
+            <img class="product-img" src="//img.alicdn.com/bao/uploaded/i2/274432595/TB2Wy_Dp80lpuFjSszdXXcdxFXa_!!274432595.jpg_400x400_.webp">
+            <h2>商品名称</h2>
+            <h6>一句话简介</h6>
+            <span style="color: red;width:100%;height100%;">价格</span>
+          </a>
+        </Col>
+        <Col span="4" class="col-style">
+          <a href="" class="a-product">
+            <img class="product-img" src="//img.alicdn.com/bao/uploaded/i2/274432595/TB2Wy_Dp80lpuFjSszdXXcdxFXa_!!274432595.jpg_400x400_.webp">
+            <h2>商品名称</h2>
+            <h6>一句话简介</h6>
+            <span style="color: red;width:100%;height100%;">价格</span>
+          </a>
+        </Col>
+        <Col span="4" class="col-style">
+          <a href="" class="a-product">
+            <img class="product-img" src="//img.alicdn.com/bao/uploaded/i2/274432595/TB2Wy_Dp80lpuFjSszdXXcdxFXa_!!274432595.jpg_400x400_.webp">
+            <h2>商品名称</h2>
+            <h6>一句话简介</h6>
+            <span style="color: red;width:100%;height100%;">价格</span>
+          </a>
+        </Col>
+        <Col span="4" class="col-style">
+          <a href="" class="a-product">
+            <img class="product-img" src="//img.alicdn.com/bao/uploaded/i2/274432595/TB2Wy_Dp80lpuFjSszdXXcdxFXa_!!274432595.jpg_400x400_.webp">
+            <h2>商品名称</h2>
+            <h6>一句话简介</h6>
+            <span style="color: red;width:100%;height100%;">价格</span>
+          </a>
+        </Col>
         <Col span="2"></Col>
+
+        <Col span="4" class="col-style">
+          <a href="" class="a-product">
+            <img class="product-img" src="//img.alicdn.com/bao/uploaded/i2/274432595/TB2Wy_Dp80lpuFjSszdXXcdxFXa_!!274432595.jpg_400x400_.webp">
+            <h2>商品名称</h2>
+            <h6>一句话简介</h6>
+            <span style="color: red;width:100%;height100%;">价格</span>
+          </a>
+        </Col>
+        <Col span="4" class="col-style">
+          <a href="" class="a-product">
+            <img class="product-img" src="//img.alicdn.com/bao/uploaded/i2/274432595/TB2Wy_Dp80lpuFjSszdXXcdxFXa_!!274432595.jpg_400x400_.webp">
+            <h2>商品名称</h2>
+            <h6>一句话简介</h6>
+            <span style="color: red;width:100%;height100%;">价格</span>
+          </a>
+        </Col>
+        <Col span="4" class="col-style">
+          <a href="" class="a-product">
+            <img class="product-img" src="//img.alicdn.com/bao/uploaded/i2/274432595/TB2Wy_Dp80lpuFjSszdXXcdxFXa_!!274432595.jpg_400x400_.webp">
+            <h2>商品名称</h2>
+            <h6>一句话简介</h6>
+            <span style="color: red;width:100%;height100%;">价格</span>
+          </a>
+        </Col>
+        <Col span="4" class="col-style">
+          <a href="" class="a-product">
+            <img class="product-img" src="//img.alicdn.com/bao/uploaded/i2/274432595/TB2Wy_Dp80lpuFjSszdXXcdxFXa_!!274432595.jpg_400x400_.webp">
+            <h2>商品名称</h2>
+            <h6>一句话简介</h6>
+            <span style="color: red;width:100%;height100%;">价格</span>
+          </a>
+        </Col>
+        
       </Row>
 
-    <!-- 页脚 -->
-      <!-- <Row type="flex" justify="center" align="middle" style="padding-top:20px;text-align:center;">
-      <Col span="24" style="height:100px;">aa</Col>
-      </Row> -->
-
-      <Row type="flex" justify="center" align="middle" style="padding-top:20px;text-align:center;">
+      <br>
+      <br>
+      <!-- 页脚 -->
+      <Row type="flex" justify="center" align="middle" style="padding-top:20px;text-align:center;background-color:white;">
           <Col span="2" style="height:100px;"></Col>
           <Col span="20" style="height:20px;">优利网备案信息</Col>
           <Col span="2" style="height:100px;"></Col>
@@ -292,7 +324,13 @@
 </template>
 
 <script>
+import Vue from 'vue'
 
+export default {
+  methods: {
+
+  }
+}
 </script>
 
 <style type="text/css">
@@ -326,15 +364,21 @@
 
   .col-style {
     height: 300px;
-    border: 1px solid #EFEFEF;
-    /*margin-right: 1;*/
+    transition:all .2s linear 0s;
+    background-color: white;
+    /*border: 1px solid #EFEFEF;*/
+    margin-left: 4px;
+    margin-top: 4px;
     /*z-index: 1;*/
     text-align: center;
     /*position: relative;*/
   }
 
   .col-style:hover {
-    border: 1px solid #bbbec4;
+    /*border: 1px solid #bbbec4;*/
+    box-shadow:0 15px 30px rgba(0,0,0,.1);
+    top: -2px;
+    z-index: 2;
   }
 
   .product-img {
