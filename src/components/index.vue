@@ -2,10 +2,13 @@
   <div>
     <Row type="flex" justify="start" align="middle" class="code-row-bg">
           <Col span="2"></Col>
-          <Col span="1"><a href="#m" class="a-type">男装</a></Col>
+          <!-- <Col span="1"><a href="#m" class="a-type">男装</a></Col>
           <Col span="1"><a href="#w" class="a-type">女装</a></Col>
           <Col span="1"><a href="#h" class="a-type">化妆品</a></Col>
-          <Col span="1"><a href="#C" class="a-type">3C</a></Col>
+          <Col span="1"><a href="#C" class="a-type">3C</a></Col> -->
+          <template v-for="goodsType in goodsTypes">
+            <Col span="1"><a :href="goodsType.remark" class="a-type">{{goodsType.name}}</a></Col>
+          </template>
       </Row>
       <br>
 
@@ -18,101 +21,144 @@
       </Col>
       </Row>
       <Row type="flex" justify="start" style="padding-top:20px;">
+        <!-- <Col span="2"></Col>
+        <Col span="4" class="col-style">
+          <a href="" class="a-product" target="_bank">
+            <img class="product-img" src="//openfile.meizu.com/group1/M00/01/8E/Cgbj0VklA4yASZHnAAEcy7880n0742_180x180.jpg">
+            <h2>商品名称</h2>
+            <h6>一句话简介</h6>
+            <span style="color: red;width:100%;height100%;">价格</span>
+          </a>
+        </Col>
+        <Col span="4" class="col-style">
+          <a href="" class="a-product">
+            <img class="product-img" src="//openfile.meizu.com/group1/M00/01/8E/Cgbj0VklA4yASZHnAAEcy7880n0742_180x180.jpg">
+            <h2>商品名称</h2>
+            <h6>一句话简介</h6>
+            <span style="color: red;width:100%;height100%;">价格</span>
+          </a>
+        </Col>
+        <Col span="4" class="col-style">
+          <a href="" class="a-product">
+            <img class="product-img" src="//openfile.meizu.com/group1/M00/01/8E/Cgbj0VklA4yASZHnAAEcy7880n0742_180x180.jpg">
+            <h2>商品名称</h2>
+            <h6>一句话简介</h6>
+            <span style="color: red;width:100%;height100%;">价格</span>
+          </a>
+        </Col>
+        <Col span="4" class="col-style">
+          <a href="" class="a-product">
+            <img class="product-img" src="//openfile.meizu.com/group1/M00/01/8E/Cgbj0VklA4yASZHnAAEcy7880n0742_180x180.jpg">
+            <h2>商品名称</h2>
+            <h6>一句话简介</h6>
+            <span style="color: red;width:100%;height100%;">价格</span>
+          </a>
+        </Col>
+        <Col span="4" class="col-style">
+          <a href="" class="a-product">
+            <img class="product-img" src="//openfile.meizu.com/group1/M00/01/8E/Cgbj0VklA4yASZHnAAEcy7880n0742_180x180.jpg">
+            <h2>商品名称</h2>
+            <h6>一句话简介</h6>
+            <span style="color: red;width:100%;height100%;">价格</span>
+          </a>
+        </Col>
+        <Col span="2"></Col> -->
+
         <Col span="2"></Col>
-      <Col span="4" class="col-style">
-        <a href="" class="a-product" target="_bank">
-          <img class="product-img" src="//openfile.meizu.com/group1/M00/01/8E/Cgbj0VklA4yASZHnAAEcy7880n0742_180x180.jpg">
-          <h2>商品名称</h2>
-          <h6>一句话简介</h6>
-          <span style="color: red;width:100%;height100%;">价格</span>
-        </a>
-      </Col>
-      <Col span="4" class="col-style">
-        <a href="" class="a-product">
-          <img class="product-img" src="//openfile.meizu.com/group1/M00/01/8E/Cgbj0VklA4yASZHnAAEcy7880n0742_180x180.jpg">
-          <h2>商品名称</h2>
-          <h6>一句话简介</h6>
-          <span style="color: red;width:100%;height100%;">价格</span>
-        </a>
-      </Col>
-      <Col span="4" class="col-style">
-        <a href="" class="a-product">
-          <img class="product-img" src="//openfile.meizu.com/group1/M00/01/8E/Cgbj0VklA4yASZHnAAEcy7880n0742_180x180.jpg">
-          <h2>商品名称</h2>
-          <h6>一句话简介</h6>
-          <span style="color: red;width:100%;height100%;">价格</span>
-        </a>
-      </Col>
-      <Col span="4" class="col-style">
-        <a href="" class="a-product">
-          <img class="product-img" src="//openfile.meizu.com/group1/M00/01/8E/Cgbj0VklA4yASZHnAAEcy7880n0742_180x180.jpg">
-          <h2>商品名称</h2>
-          <h6>一句话简介</h6>
-          <span style="color: red;width:100%;height100%;">价格</span>
-        </a>
-      </Col>
-      <Col span="4" class="col-style">
-        <a href="" class="a-product">
-          <img class="product-img" src="//openfile.meizu.com/group1/M00/01/8E/Cgbj0VklA4yASZHnAAEcy7880n0742_180x180.jpg">
-          <h2>商品名称</h2>
-          <h6>一句话简介</h6>
-          <span style="color: red;width:100%;height100%;">价格</span>
-        </a>
-      </Col>
+        <template v-for="goods in goodsHotList">
+          <Col span="4" class="col-style">
+            <a href="" class="a-product">
+              <img class="product-img" :src="goods.thumbnailUrl">
+              <h2>{{goods.name}}</h2>
+              <h6>{{goods.info}}</h6>
+              <span style="color: red;width:100%;height100%;">{{goods.price}}</span>
+            </a>
+          </Col>
+        </template>
         <Col span="2"></Col>
       </Row>
       <br>
 
-      <Row type="flex" justify="start">
+      <!-- 循环商品类型 -->
+      <template v-for="goodsAndData in goodsTypes">
+        <Row type="flex" justify="start">
+          <Col span="2"></Col>
+          <Col span="4">
+            <div>
+              <h2 class="h2-title" :id="goodsAndData.code">{{goodsAndData.name}}</h2>
+            </div>
+          </Col>
+        </Row>
+
+        <Row type="flex" justify="start" style="padding-top:20px;">
+          <Col span="2"></Col>
+
+          <!-- 循环每种类型下的商品 -->
+          <template v-for="goodsInType in goodsAndData.goodsList">
+            <Col span="4" class="col-style">
+              <a href="" class="a-product">
+                <img class="product-img" :src="goodsInType.thumbnailUrl">
+                <h2>{{goodsInType.name}}</h2>
+                <h6>{{goodsInType.info}}</h6>
+                <span style="color: red;width:100%;height100%;">{{goodsInType.price}}</span>
+              </a>
+            </Col>
+          </template>
+          <Col span="2"></Col>
+        </Row>
+        <br>
+      </template>
+
+      <!-- <Row type="flex" justify="start">
         <Col span="2"></Col>
-      <Col span="4">
-        <div>
-          <h2 class="h2-title" id="m">男装</h2>
-        </div>
-      </Col>
+        <Col span="4">
+          <div>
+            <h2 class="h2-title" id="m">男装</h2>
+          </div>
+        </Col>
       </Row>
       <Row type="flex" justify="start" style="padding-top:20px;">
         <Col span="2"></Col>
-      <Col span="4" class="col-style">
-        <a href="" class="a-product">
-          <img class="product-img" src="//img.alicdn.com/bao/uploaded/i1/TB1ly8cNpXXXXaQXXXXXXXXXXXX_!!0-item_pic.jpg_400x400_.webp">
-          <h2>商品名称</h2>
-          <h6>一句话简介</h6>
-          <span style="color: red;width:100%;height100%;">价格</span>
-        </a>
-      </Col>
-      <Col span="4" class="col-style">
-        <a href="" class="a-product">
-          <img class="product-img" src="//img.alicdn.com/bao/uploaded/i1/TB1ly8cNpXXXXaQXXXXXXXXXXXX_!!0-item_pic.jpg_400x400_.webp">
-          <h2>商品名称</h2>
-          <h6>一句话简介</h6>
-          <span style="color: red;width:100%;height100%;">价格</span>
-        </a>
-      </Col>
-      <Col span="4" class="col-style">
-        <a href="" class="a-product">
-          <img class="product-img" src="//img.alicdn.com/bao/uploaded/i1/TB1ly8cNpXXXXaQXXXXXXXXXXXX_!!0-item_pic.jpg_400x400_.webp">
-          <h2>商品名称</h2>
-          <h6>一句话简介</h6>
-          <span style="color: red;width:100%;height100%;">价格</span>
-        </a>
-      </Col>
-      <Col span="4" class="col-style">
-        <a href="" class="a-product">
-          <img class="product-img" src="//img.alicdn.com/bao/uploaded/i1/TB1ly8cNpXXXXaQXXXXXXXXXXXX_!!0-item_pic.jpg_400x400_.webp">
-          <h2>商品名称</h2>
-          <h6>一句话简介</h6>
-          <span style="color: red;width:100%;height100%;">价格</span>
-        </a>
-      </Col>
-      <Col span="4" class="col-style">
-        <a href="" class="a-product">
-          <img class="product-img" src="//img.alicdn.com/bao/uploaded/i1/TB1ly8cNpXXXXaQXXXXXXXXXXXX_!!0-item_pic.jpg_400x400_.webp">
-          <h2>商品名称</h2>
-          <h6>一句话简介</h6>
-          <span style="color: red;width:100%;height100%;">价格</span>
-        </a>
-      </Col>
+        <Col span="4" class="col-style">
+          <a href="" class="a-product">
+            <img class="product-img" src="//img.alicdn.com/bao/uploaded/i1/TB1ly8cNpXXXXaQXXXXXXXXXXXX_!!0-item_pic.jpg_400x400_.webp">
+            <h2>商品名称</h2>
+            <h6>一句话简介</h6>
+            <span style="color: red;width:100%;height100%;">价格</span>
+          </a>
+        </Col>
+        <Col span="4" class="col-style">
+          <a href="" class="a-product">
+            <img class="product-img" src="//img.alicdn.com/bao/uploaded/i1/TB1ly8cNpXXXXaQXXXXXXXXXXXX_!!0-item_pic.jpg_400x400_.webp">
+            <h2>商品名称</h2>
+            <h6>一句话简介</h6>
+            <span style="color: red;width:100%;height100%;">价格</span>
+          </a>
+        </Col>
+        <Col span="4" class="col-style">
+          <a href="" class="a-product">
+            <img class="product-img" src="//img.alicdn.com/bao/uploaded/i1/TB1ly8cNpXXXXaQXXXXXXXXXXXX_!!0-item_pic.jpg_400x400_.webp">
+            <h2>商品名称</h2>
+            <h6>一句话简介</h6>
+            <span style="color: red;width:100%;height100%;">价格</span>
+          </a>
+        </Col>
+        <Col span="4" class="col-style">
+          <a href="" class="a-product">
+            <img class="product-img" src="//img.alicdn.com/bao/uploaded/i1/TB1ly8cNpXXXXaQXXXXXXXXXXXX_!!0-item_pic.jpg_400x400_.webp">
+            <h2>商品名称</h2>
+            <h6>一句话简介</h6>
+            <span style="color: red;width:100%;height100%;">价格</span>
+          </a>
+        </Col>
+        <Col span="4" class="col-style">
+          <a href="" class="a-product">
+            <img class="product-img" src="//img.alicdn.com/bao/uploaded/i1/TB1ly8cNpXXXXaQXXXXXXXXXXXX_!!0-item_pic.jpg_400x400_.webp">
+            <h2>商品名称</h2>
+            <h6>一句话简介</h6>
+            <span style="color: red;width:100%;height100%;">价格</span>
+          </a>
+        </Col>
         <Col span="2"></Col>
       </Row>
       <br>
@@ -310,7 +356,7 @@
           </a>
         </Col>
         
-      </Row>
+      </Row> -->
 
       <br>
       <br>
@@ -324,11 +370,62 @@
 </template>
 
 <script>
-import Vue from 'vue'
+import goods from '../scripts/goods'
 
 export default {
-  methods: {
+  data() {
+    return {
+      goodsTypesLenght: 0,// 商品分类的数量
+      completedNum: 0,// 因为分类型去查询商品，ajax为异步，所以用此参数记录是否查询完毕，查询完后渲染一次页面
+      goodsHotList: [],// 热销商品列表
+      goodsTypesCache: [],// 暂存每个ajax请求的结果
+      goodsTypes: []// 此对象保存每个分类和分类对应的商品列表
+    }
+  },
+  created(){
+    goods.findGoodsType((data) => {
+      let goodsTypesTemp = [];
+      goodsTypesTemp = data;
 
+      this.goodsTypesLenght = data.length;
+
+      if(goodsTypesTemp.length > 0){
+        for(let i=0, len=goodsTypesTemp.length; i<len; i++){
+          goods.findGoodsList({pageNo: 0, pageSize: 10, goodsType: goodsTypesTemp[i].code}, (datasub) => {
+            for(let j=0, lenj=datasub.content.length; j<lenj; j++){
+              datasub.content[j].thumbnailUrl = '/haoback_service/goods/image/' + datasub.content[j].thumbnailUrl;
+            }
+
+            goodsTypesTemp[i].goodsList = datasub.content;
+            this.goodsTypesCache = goodsTypesTemp;
+            this.completedNum += 1;
+          })
+        }
+      }
+    });
+
+    // 查询热销商品
+    goods.findGoodsList({pageNo: 0, pageSize: 5, goodsType: 'hot'}, (data) => {
+      for(let i=0, len=data.content.length; i<len; i++){
+        data.content[i].thumbnailUrl = '/haoback_service/goods/image/' + data.content[i].thumbnailUrl;
+      }
+      this.goodsHotList = data.content;
+    })
+  },
+
+  methods: {
+    // 监听实现方法
+    watchCompletedNum(){
+      if(this.completedNum == this.goodsTypesLenght){
+        this.goodsTypes = this.goodsTypesCache;
+        console.log('监听.....');
+      }
+    }
+  },
+
+  // 监听对象值变化
+  watch: {
+    'completedNum': 'watchCompletedNum'
   }
 }
 </script>

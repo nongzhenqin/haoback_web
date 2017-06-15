@@ -5,8 +5,7 @@ module.exports = [
 	// 入口
 	{
 		path: '/haoback',
-		component: Index,
-		meta: { scrollToTop: true }
+		component: Index
 	},
 	// 404页面
 	{ path: '*', component: NotFoundComponent }
