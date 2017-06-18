@@ -68,7 +68,7 @@
         <template v-for="goods in goodsHotList">
           <Col span="4" class="col-style">
             <a href="" class="a-product">
-              <img class="product-img" :src="goods.thumbnailUrl">
+              <img class="product-img" :src="goods.fileId">
               <h2>{{goods.name}}</h2>
               <h6>{{goods.info}}</h6>
               <span style="color: red;width:100%;height100%;">{{goods.price}}</span>
@@ -94,10 +94,11 @@
           <Col span="2"></Col>
 
           <!-- 循环每种类型下的商品 -->
-          <template v-for="goodsInType in goodsAndData.goodsList">
+          <template v-for="(goodsInType, index) in goodsAndData.goodsList">
+            <Col v-if="index != 0 && index%5 == 0" span="2"></Col>
             <Col span="4" class="col-style">
               <a href="" class="a-product">
-                <img class="product-img" :src="goodsInType.thumbnailUrl">
+                <img class="product-img" :src="goodsInType.fileId">
                 <h2>{{goodsInType.name}}</h2>
                 <h6>{{goodsInType.info}}</h6>
                 <span style="color: red;width:100%;height100%;">{{goodsInType.price}}</span>
@@ -393,7 +394,7 @@ export default {
         for(let i=0, len=goodsTypesTemp.length; i<len; i++){
           goods.findGoodsList({pageNo: 0, pageSize: 10, goodsType: goodsTypesTemp[i].code}, (datasub) => {
             for(let j=0, lenj=datasub.content.length; j<lenj; j++){
-              datasub.content[j].thumbnailUrl = '/haoback_service/goods/image/' + datasub.content[j].thumbnailUrl;
+              datasub.content[j].fileId = '/haoback_service/goods/image/' + datasub.content[j].fileId;
             }
 
             goodsTypesTemp[i].goodsList = datasub.content;
@@ -407,7 +408,7 @@ export default {
     // 查询热销商品
     goods.findGoodsList({pageNo: 0, pageSize: 5, goodsType: 'hot'}, (data) => {
       for(let i=0, len=data.content.length; i<len; i++){
-        data.content[i].thumbnailUrl = '/haoback_service/goods/image/' + data.content[i].thumbnailUrl;
+        data.content[i].fileId = '/haoback_service/goods/image/' + data.content[i].fileId;
       }
       this.goodsHotList = data.content;
     })
