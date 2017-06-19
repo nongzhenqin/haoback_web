@@ -2,10 +2,6 @@
   <div>
     <Row type="flex" justify="start" align="middle" class="code-row-bg">
           <Col span="2"></Col>
-          <!-- <Col span="1"><a href="#m" class="a-type">男装</a></Col>
-          <Col span="1"><a href="#w" class="a-type">女装</a></Col>
-          <Col span="1"><a href="#h" class="a-type">化妆品</a></Col>
-          <Col span="1"><a href="#C" class="a-type">3C</a></Col> -->
           <template v-for="goodsType in goodsTypes">
             <Col span="1"><a :href="goodsType.remark" class="a-type">{{goodsType.name}}</a></Col>
           </template>
@@ -21,57 +17,14 @@
       </Col>
       </Row>
       <Row type="flex" justify="start" style="padding-top:20px;">
-        <!-- <Col span="2"></Col>
-        <Col span="4" class="col-style">
-          <a href="" class="a-product" target="_bank">
-            <img class="product-img" src="//openfile.meizu.com/group1/M00/01/8E/Cgbj0VklA4yASZHnAAEcy7880n0742_180x180.jpg">
-            <h2>商品名称</h2>
-            <h6>一句话简介</h6>
-            <span style="color: red;width:100%;height100%;">价格</span>
-          </a>
-        </Col>
-        <Col span="4" class="col-style">
-          <a href="" class="a-product">
-            <img class="product-img" src="//openfile.meizu.com/group1/M00/01/8E/Cgbj0VklA4yASZHnAAEcy7880n0742_180x180.jpg">
-            <h2>商品名称</h2>
-            <h6>一句话简介</h6>
-            <span style="color: red;width:100%;height100%;">价格</span>
-          </a>
-        </Col>
-        <Col span="4" class="col-style">
-          <a href="" class="a-product">
-            <img class="product-img" src="//openfile.meizu.com/group1/M00/01/8E/Cgbj0VklA4yASZHnAAEcy7880n0742_180x180.jpg">
-            <h2>商品名称</h2>
-            <h6>一句话简介</h6>
-            <span style="color: red;width:100%;height100%;">价格</span>
-          </a>
-        </Col>
-        <Col span="4" class="col-style">
-          <a href="" class="a-product">
-            <img class="product-img" src="//openfile.meizu.com/group1/M00/01/8E/Cgbj0VklA4yASZHnAAEcy7880n0742_180x180.jpg">
-            <h2>商品名称</h2>
-            <h6>一句话简介</h6>
-            <span style="color: red;width:100%;height100%;">价格</span>
-          </a>
-        </Col>
-        <Col span="4" class="col-style">
-          <a href="" class="a-product">
-            <img class="product-img" src="//openfile.meizu.com/group1/M00/01/8E/Cgbj0VklA4yASZHnAAEcy7880n0742_180x180.jpg">
-            <h2>商品名称</h2>
-            <h6>一句话简介</h6>
-            <span style="color: red;width:100%;height100%;">价格</span>
-          </a>
-        </Col>
-        <Col span="2"></Col> -->
-
         <Col span="2"></Col>
         <template v-for="goods in goodsHotList">
           <Col span="4" class="col-style">
-            <a href="" class="a-product">
+            <a :href="goods.urlLink" target="_bank" class="a-product">
               <img class="product-img" :src="goods.fileId">
-              <h2>{{goods.name}}</h2>
-              <h6>{{goods.info}}</h6>
-              <span style="color: red;width:100%;height100%;">{{goods.price}}</span>
+              <h6 style="padding-left: 5px;padding-right: 5px;">{{goods.name}}</h6>
+              <h6 v-if="goods.info && goods.info.length > 0">{{goods.info}}</h6>
+              <span style="color: red;width:100%;height100%;font-size: 20px;font-family:arial; color:#F40; font-weight: 700;">￥{{goods.price}}</span>&nbsp;&nbsp;&nbsp;&nbsp;月销&nbsp;{{goods.salesNum}}
             </a>
           </Col>
         </template>
@@ -97,11 +50,11 @@
           <template v-for="(goodsInType, index) in goodsAndData.goodsList">
             <Col v-if="index != 0 && index%5 == 0" span="2"></Col>
             <Col span="4" class="col-style">
-              <a href="" class="a-product">
+              <a :href="goodsInType.urlLink" target="_bank" class="a-product">
                 <img class="product-img" :src="goodsInType.fileId">
-                <h2>{{goodsInType.name}}</h2>
-                <h6>{{goodsInType.info}}</h6>
-                <span style="color: red;width:100%;height100%;">{{goodsInType.price}}</span>
+                <h6 style="padding-left: 5px; padding-right: 5px;">{{goodsInType.name}}</h6>
+                <h6 v-if="goodsInType.info && goodsInType.info.length > 0">{{goodsInType.info}}</h6>
+                <span style="color: red;width:100%;height100%;font-size: 20px;font-family:arial; color:#F40; font-weight: 700;">￥{{goodsInType.price}}</span>&nbsp;&nbsp;&nbsp;&nbsp;月销&nbsp;{{goodsInType.salesNum}}
               </a>
             </Col>
           </template>
@@ -395,6 +348,7 @@ export default {
           goods.findGoodsList({pageNo: 0, pageSize: 10, goodsType: goodsTypesTemp[i].code}, (datasub) => {
             for(let j=0, lenj=datasub.content.length; j<lenj; j++){
               datasub.content[j].fileId = '/haoback_service/goods/image/' + datasub.content[j].fileId;
+              datasub.content[j].price = parseFloat(datasub.content[j].price).toFixed(2);
             }
 
             goodsTypesTemp[i].goodsList = datasub.content;
@@ -409,6 +363,7 @@ export default {
     goods.findGoodsList({pageNo: 0, pageSize: 5, goodsType: 'hot'}, (data) => {
       for(let i=0, len=data.content.length; i<len; i++){
         data.content[i].fileId = '/haoback_service/goods/image/' + data.content[i].fileId;
+        data.content[i].price = parseFloat(data.content[i].price).toFixed(2);
       }
       this.goodsHotList = data.content;
     })
